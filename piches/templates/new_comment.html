@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% for comment in comments %}
+        <article class="media content-section">
+
+            <div class="media-body">
+                <div class="article-metadata">
+                    <p class="mr-2" href="#">{{ comment.comment }}</p>
+
+                </div>
+            </div>
+
+        </article>
+    {% endfor %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.csrf_token }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Comment
+                </legend>
+
+                <div class="form-group">
+                    {{ form.comment.label(class="form-control-label") }}
+                    {% if form.comment.errors %}
+                        {{ form.comment(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.comment.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.comment(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class='btn btn-outline-info') }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{#752c8fb526930715af8d595aaf3bde6ca2eb0422#}

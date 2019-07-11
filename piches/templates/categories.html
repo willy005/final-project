@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Categories</h1>
+    {% for pitch in pitches %}
+        <article class="media content-section">
+
+            <div class="media-body">
+                <div class="article-metadata">
+
+                    <p class="article-content">{{ pitch.category }}</p>
+                </div>
+
+            </div>
+
+        </article>
+    {% endfor %}
+{% endblock content %}
