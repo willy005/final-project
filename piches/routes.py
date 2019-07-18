@@ -100,7 +100,6 @@ def new_pitch():
 
 
 @app.route('/comment/<int:pitch_id>', methods=['GET', 'POST'])
-@login_required
 def new_comment(pitch_id):
     comments = Comment.query.filter_by(pitch_id=pitch_id)
     form = CommentForm()

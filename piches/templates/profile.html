@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% block content %}
-{#    <h1>{{ current_user.username }}</h1>#}
 <div class="content-section" style="color: black">
   <div class="media">
     <img class="rounded-circle account-img" src="{{ image_file }}">
@@ -11,26 +10,13 @@
   </div>
   <!-- FORM HERE -->
 </div>
-{#    {% for pitch in pitches %}#}
-{#        <article class="media content-section">#}
-{##}
-{#            <div class="media-body">#}
-{#                <div class="article-metadata">#}
-{#                    <h4>@ {{ pitch.author.username }}</h4>#}
-{#                    <small class="text-muted">{{ pitch.date_posted.strftime('%Y-%m-%d') }}</small>#}
-{#                    <p class="article-content">Category: {{ pitch.category }}</p>#}
-{#                </div>#}
-{##}
-{#                <h2>{{ pitch.pitch }}</h2>#}
-{#            </div>#}
-{#        </article>#}
-{#        {% endfor %}#}
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.csrf_token }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">
                     Update Account!
                 </legend>
+                <br>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
 

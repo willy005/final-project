@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+    <h1>Solutions</h1>
     {% for comment in comments %}
         <article class="media content-section">
 
@@ -18,7 +19,7 @@
             {{ form.csrf_token }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">
-                    Comment
+                    Add comment
                 </legend>
 
                 <div class="form-group">
